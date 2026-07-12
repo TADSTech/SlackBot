@@ -1,0 +1,355 @@
+/* ─── Reset ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  background: #0e0e1a;
+  color: #e0e0ee;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: #36c5f0;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── Hero ─── */
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 50%, rgba(54, 197, 240, 0.08), transparent),
+    radial-gradient(ellipse 600px 400px at 80% 30%, rgba(224, 30, 90, 0.06), transparent),
+    radial-gradient(ellipse 500px 500px at 50% 80%, rgba(46, 182, 125, 0.05), transparent);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding: 24px;
+}
+
+/* ─── Slack # Logo ─── */
+.hash-logo {
+  position: relative;
+  width: 140px;
+  height: 140px;
+}
+
+.hash-stroke {
+  position: absolute;
+  border-radius: 4px;
+}
+
+.hash-stroke.blue {
+  width: 28px;
+  height: 80px;
+  background: #36c5f0;
+  top: 30px;
+  left: 26px;
+}
+
+.hash-stroke.green {
+  width: 28px;
+  height: 80px;
+  background: #2eb67d;
+  top: 30px;
+  right: 26px;
+}
+
+.hash-stroke.yellow {
+  width: 100px;
+  height: 28px;
+  background: #ecb22e;
+  top: 26px;
+  left: 20px;
+}
+
+.hash-stroke.red {
+  width: 100px;
+  height: 28px;
+  background: #e01e5a;
+  bottom: 26px;
+  left: 20px;
+}
+
+.hash-stroke.blue::before,
+.hash-stroke.green::before,
+.hash-stroke.yellow::before,
+.hash-stroke.red::before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.hash-stroke.blue::before {
+  top: -14px;
+  left: 0;
+}
+.hash-stroke.green::before {
+  top: -14px;
+  left: 0;
+}
+.hash-stroke.yellow::before {
+  top: 0;
+  left: -14px;
+}
+.hash-stroke.red::before {
+  top: 0;
+  left: -14px;
+}
+
+.hero-text h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #36c5f0, #2eb67d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: #9090b0;
+  margin-top: 4px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition:
+    background 0.2s,
+    transform 0.15s;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #36c5f0;
+  color: #0e0e1a;
+}
+.btn-primary:hover {
+  background: #5bd0f5;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e0e0ee;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+/* ─── Sections ─── */
+.section {
+  padding: 80px 0;
+}
+
+.section.alt {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.section p {
+  max-width: 720px;
+  color: #b0b0cc;
+}
+
+/* ─── Badges ─── */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.badge {
+  background: rgba(54, 197, 240, 0.12);
+  color: #36c5f0;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(54, 197, 240, 0.2);
+}
+
+/* ─── Commands Grid ─── */
+.commands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.cmd-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 20px;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.cmd-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(54, 197, 240, 0.3);
+}
+
+.cmd-name {
+  font-family: "SF Mono", "Consolas", "Fira Code", monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #36c5f0;
+  margin-bottom: 4px;
+}
+
+.cmd-desc {
+  font-size: 0.9rem;
+  color: #9090b0;
+}
+
+.cmd-empty {
+  color: #e01e5a;
+}
+
+/* ─── Code block ─── */
+pre {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+code {
+  font-family: "SF Mono", "Consolas", "Fira Code", monospace;
+  font-size: 0.9rem;
+  color: #c0c0dd;
+}
+
+/* ─── Tech Grid ─── */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.tech-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.tech-card h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.tech-card p {
+  font-size: 0.9rem;
+  color: #9090b0;
+}
+
+.tech-card code {
+  font-size: 0.85rem;
+  color: #2eb67d;
+}
+
+/* ─── Footer ─── */
+.footer {
+  text-align: center;
+  padding: 32px 0;
+  font-size: 0.85rem;
+  color: #606080;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer a {
+  color: #606080;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 640px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .commands-grid {
+    grid-template-columns: 1fr;
+  }
+}

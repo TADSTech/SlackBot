@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="TOC SlackBot — your command center, right in Slack. A feature-packed Slack bot built with Bolt and TypeScript."
+    />
+
+    <meta property="og:title" content="TOC SlackBot" />
+    <meta property="og:description" content="Your command center, right in Slack." />
+    <meta property="og:image" content="assets/slackbot-banner.png" />
+    <meta property="og:url" content="https://tadstech.github.io/SlackBot" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TOC SlackBot" />
+    <meta name="twitter:description" content="Your command center, right in Slack." />
+    <meta name="twitter:image" content="assets/slackbot-banner.png" />
+
+    <title>TOC SlackBot</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E%23%3C/text%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-content">
+        <div class="logo">
+          <div class="hash-logo">
+            <span class="hash-stroke blue"></span>
+            <span class="hash-stroke green"></span>
+            <span class="hash-stroke yellow"></span>
+            <span class="hash-stroke red"></span>
+          </div>
+        </div>
+        <div class="hero-text">
+          <h1>TOC SlackBot</h1>
+          <p class="tagline">Your command center, right in Slack</p>
+          <div class="hero-actions">
+            <a href="https://github.com/TADSTech/SlackBot" class="btn btn-primary" target="_blank"
+              >View on GitHub</a
+            >
+            <a href="#commands" class="btn btn-secondary">Explore Commands</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bg"></div>
+    </header>
+
+    <main>
+      <section id="about" class="section">
+        <div class="container">
+          <h2>About</h2>
+          <p>
+            TOC SlackBot is a lightweight, extensible Slack bot built with
+            <strong>Bun</strong>, <strong>TypeScript</strong>, and the
+            <strong>Bolt framework</strong>. It runs via <em>Socket Mode</em> (no public HTTP
+            endpoint needed) and responds to slash commands in real time — from simple ping/pong
+            checks to external API-powered fun.
+          </p>
+          <div class="tech-stack">
+            <span class="badge">Bun</span>
+            <span class="badge">TypeScript</span>
+            <span class="badge">Bolt (Slack SDK)</span>
+            <span class="badge">Socket Mode</span>
+            <span class="badge">ESLint</span>
+            <span class="badge">Prettier</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="commands" class="section alt">
+        <div class="container">
+          <h2>Commands</h2>
+          <div class="commands-grid" id="command-list"></div>
+        </div>
+      </section>
+
+      <section id="quickstart" class="section">
+        <div class="container">
+          <h2>Quick Start</h2>
+          <pre><code>git clone https://github.com/TADSTech/SlackBot.git
+cd SlackBot
+bun install
+cp .env.example .env        # add your tokens
+bun run index.ts</code></pre>
+        </div>
+      </section>
+
+      <section id="tech" class="section alt">
+        <div class="container">
+          <h2>Technical Details</h2>
+          <div class="tech-grid">
+            <div class="tech-card">
+              <h3>Runtime</h3>
+              <p>
+                Runs on <strong>Bun</strong> — a fast all-in-one JavaScript runtime. No Node.js
+                required for development.
+              </p>
+            </div>
+            <div class="tech-card">
+              <h3>Slack Integration</h3>
+              <p>
+                Uses <strong>Socket Mode</strong> so no public endpoint is needed. Perfect for local
+                or ephemeral deployments.
+              </p>
+            </div>
+            <div class="tech-card">
+              <h3>Type Safety</h3>
+              <p>
+                Written in strict TypeScript with full type checking via <code>tsc --noEmit</code>.
+              </p>
+            </div>
+            <div class="tech-card">
+              <h3>Code Quality</h3>
+              <p>
+                ESLint + Prettier enforce consistent style. Husky pre-push hooks prevent bad commits
+                from reaching the repo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; 2026 <a href="https://github.com/TADSTech">TADSTech</a>. Built with Bun &amp; Bolt.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
