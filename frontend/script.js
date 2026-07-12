@@ -46,7 +46,7 @@ const COMMANDS = [
     catLabel: "Media",
   },
   {
-    name: "/tadsocommand-joke",
+    name: "/toc-joke",
     desc: "Get a random joke with setup and punchline.",
     cat: "Fun",
     catLabel: "Fun",
@@ -109,7 +109,7 @@ const COMMANDS = [
   },
   {
     name: "/toc-number",
-    desc: "Get a random or specific number fact.",
+    desc: "Get a random number fact.",
     cat: "Knowledge",
     catLabel: "Knowledge",
   },
@@ -121,6 +121,36 @@ const COMMANDS = [
   },
   { name: "/toc-cat", desc: "Get a random cat fact.", cat: "Media", catLabel: "Media" },
   { name: "/toc-dog", desc: "Get a random dog image.", cat: "Media", catLabel: "Media" },
+  {
+    name: "/toc-court",
+    desc: "Turn your question into a courtroom verdict.",
+    cat: "Personality",
+    catLabel: "Personality",
+  },
+  {
+    name: "/toc-fortune",
+    desc: "Get a sarcastic fortune cookie.",
+    cat: "Personality",
+    catLabel: "Personality",
+  },
+  {
+    name: "/toc-corporate",
+    desc: "Generate corporate buzzword phrases.",
+    cat: "Personality",
+    catLabel: "Personality",
+  },
+  {
+    name: "/toc-therapy",
+    desc: "Talk to a developer therapist.",
+    cat: "Personality",
+    catLabel: "Personality",
+  },
+  {
+    name: "/toc-plot",
+    desc: "Get a random plot twist.",
+    cat: "Personality",
+    catLabel: "Personality",
+  },
 ];
 
 const CAT_CLASSES = {
@@ -128,6 +158,7 @@ const CAT_CLASSES = {
   Fun: "cmd-fun",
   Knowledge: "cmd-knowledge",
   Media: "cmd-media",
+  Personality: "cmd-personality",
 };
 
 // ─── Render Commands ───
@@ -188,6 +219,14 @@ function initParticles() {
     h,
     particles = [];
 
+  const colors = [
+    "rgba(54,197,240,0.15)", // Slack blue
+    "rgba(46,182,125,0.12)", // Slack green
+    "rgba(236,178,46,0.1)", // Slack yellow
+    "rgba(224,30,90,0.1)", // Slack red
+    "rgba(177,74,237,0.12)", // Personality purple
+  ];
+
   function resize() {
     w = canvas.width = window.innerWidth;
     h = canvas.height = window.innerHeight;
@@ -195,13 +234,14 @@ function initParticles() {
   resize();
   window.addEventListener("resize", resize);
 
-  for (let i = 0; i < 60; i++) {
+  for (let i = 0; i < 80; i++) {
     particles.push({
       x: Math.random() * w,
       y: Math.random() * h,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
-      r: Math.random() * 1.5 + 0.5,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      r: Math.random() * 2 + 0.5,
+      color: colors[Math.floor(Math.random() * colors.length)],
     });
   }
 
@@ -218,7 +258,7 @@ function initParticles() {
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(255,255,255,0.06)";
+      ctx.fillStyle = p.color;
       ctx.fill();
     }
 
@@ -227,11 +267,11 @@ function initParticles() {
         const dx = particles[i].x - particles[j].x;
         const dy = particles[i].y - particles[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120) {
+        if (dist < 140) {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(255,255,255,${0.04 * (1 - dist / 120)})`;
+          ctx.strokeStyle = `rgba(54,197,240,${0.03 * (1 - dist / 140)})`;
           ctx.stroke();
         }
       }
@@ -245,7 +285,7 @@ function initParticles() {
 // ─── Demo Terminal ───
 const DEMO_RESPONSES = {
   ping: "Pong! 🏓\nLatency: 12ms",
-  help: "Available commands:\n• /toc-ping — Check bot latency\n• /toc-help — Show this help\n• /toc-echo — Echo your message\n• /toc-time — Current server time\n• /toc-uptime — Bot uptime\n• /tadsocommand-joke — Random joke\n... and 16 more!",
+  help: "Available commands:\n• /toc-ping — Check bot latency\n• /toc-help — Show this help\n• /toc-echo — Echo your message\n• /toc-time — Current server time\n• /toc-uptime — Bot uptime\n• /toc-joke — Random joke\n... and 21 more!",
   echo: "Echo chamber activated: ⚡ totally got this",
   time: "🕐 7/12/2026, 3:42:17 PM",
   uptime: "⏱ Been running for 2d 14h 23m 7s",
@@ -271,6 +311,11 @@ const DEMO_RESPONSES = {
   define:
     "📖 *Serendipity* (noun)\n> The occurrence of events by chance in a happy or beneficial way.\n_Example: Finding that book was pure serendipity._",
   number: "🔢 Number Fact: 42 is the number of laws of robotics according to Isaac Asimov's books.",
+  court: "⚖️ Court of TOC (Presided over by: Judge Jenkins)\n\n*Case:* Should I skip class?\n\n*Verdict:* Absolutely not.\n\n*Sentence:* Attend class and complain about it later.\n\n*Appeal status:* Denied.",
+  fortune: "🥠 *Your fortune:* Your bug will disappear.\n\nUnfortunately it's because production crashed.",
+  corporate: "Following a comprehensive cross-functional review, we are proactively implementing enhance platform stability through targeted remediation.",
+  therapy: "🧘 *Therapist:*\n\nThat sounds really difficult.\n\nHave you tried deleting node_modules?\n\n...\n\nHow did that make you feel?",
+  plot: "🎬 *Today's Plot Twist:\n\nThe intern has been secretly approving every pull request.\n\nNobody noticed.",
 };
 
 const terminalBody = document.getElementById("terminalBody");
@@ -390,5 +435,7 @@ document.querySelectorAll(".section").forEach((section) => {
 });
 
 // ─── Init ───
+document.getElementById("cmdCount").textContent = COMMANDS.length;
+document.getElementById("cmdCountBottom").textContent = COMMANDS.length;
 initParticles();
 renderCommands();

@@ -1,0 +1,17 @@
+export const ROASTS = [
+  "You're not stupid; you just have bad luck thinking.",
+  "I'd agree with you, but then we'd both be wrong.",
+  "You bring everyone so much joy — when you leave.",
+  "Somewhere a village is missing its idiot.",
+  "Your secrets are safe with me. I never listen anyway.",
+  "Your code has more bugs than an ant farm.",
+  "You're like a human version of a 404 error.",
+  "If laughter is the best medicine, your face is curing the world.",
+  "Your pull requests are my daily workout — I'm exhausted just looking at them.",
+  "You're the reason we have a 'Do Not Disturb' button.",
+  "If I wanted to kill my day, I'd tell you my opinion.",
+  "Your coding style is unique. Not good, but unique.",
+  "You're like a comment in the book I skip.",
+  "Your debug logs are scarier than horror movies.",
+  "I'm not saying you're slow, but even your code needs a coffee break.",
+];

@@ -481,6 +481,9 @@ a:hover {
 .cmd-card .cmd-media {
   color: #ecb22e;
 }
+.cmd-card .cmd-personality {
+  color: #b14aed;
+}
 
 .cmd-name {
   font-family: "SF Mono", "Consolas", "Fira Code", monospace;

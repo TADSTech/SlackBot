@@ -6,70 +6,71 @@
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![GitHub Pages](https://img.shields.io/badge/hosted-GitHub%20Pages-222?logo=github)](https://tadstech.github.io/SlackBot)
 
-A lightweight, extensible Slack bot that runs via **Socket Mode** — no public HTTP endpoint needed. Built with Bun, TypeScript, and the Bolt framework.
+A Slack bot I built with **Bun**, **TypeScript**, and **Slack Bolt**. It runs entirely through **Socket Mode**, so you don't need to expose a public server just to test or use it.
 
-> **Live showcase:** [tadstech.github.io/SlackBot](https://tadstech.github.io/SlackBot)
+I mainly built this as a fun project to explore Slack's API while keeping the codebase clean, strongly typed, and easy to extend.
+
+**Live demo:** https://tadstech.github.io/SlackBot
 
 ---
 
-## Features
+## What it does
 
-- **23 slash commands** across 4 categories — Utility, Fun, Knowledge, Media
-- **Socket Mode** — no public URL required; ideal for local or ephemeral deployments
-- **External API integration** — pulls from 10+ free APIs (jokes, facts, quotes, weather, crypto, dogs, cats, trivia, dictionary, and more)
-- **Dynamic responses** — random response variants keep every interaction fresh
-- **Type safety** — strict TypeScript configuration, fully type-checked
-- **Code quality** — ESLint + Prettier, enforced via Husky pre-push hooks
+Right now the bot comes with **23 slash commands** split into four groups:
+
+- Utility
+- Fun
+- Knowledge
+- Media
+
+Some commands are simple quality-of-life tools like ping, uptime, and echo. Others pull data from free public APIs for things like:
+
+- jokes
+- quotes
+- trivia
+- weather
+- cryptocurrency prices
+- dictionary definitions
+- random facts
+- dog images
+- cat facts
+- and a few more
+
+Most responses have multiple variants so the bot doesn't repeat the exact same message every time.
+
+Since everything runs through **Socket Mode**, there's no Request URL to host or tunnel during development.
+
+---
 
 ## Commands
 
-| Category      | Command              | Description                               |
-| ------------- | -------------------- | ----------------------------------------- |
-| **Utility**   | `/toc-ping`          | Check bot latency (random variants)       |
-|               | `/toc-help`          | Categorized help menu                     |
-|               | `/toc-echo <text>`   | Echo your message back (varied responses) |
-|               | `/toc-time`          | Show current server date and time         |
-|               | `/toc-uptime`        | Show how long the bot has been running    |
-| **Fun**       | `/tadsocommand-joke` | Get a random joke                         |
-|               | `/toc-roast`         | Get roasted by the bot                    |
-|               | `/toc-insult`        | Get a playful insult                      |
-|               | `/toc-8ball`         | Ask the magic 8-ball                      |
-|               | `/toc-wyr`           | Would You Rather question                 |
-|               | `/toc-yesno`         | Yes/no/maybe answer                       |
-|               | `/toc-bored`         | Activity suggestion                       |
-|               | `/toc-kanye`         | Kanye West quote                          |
-| **Knowledge** | `/toc-fact`          | Random useless fact                       |
-|               | `/toc-advice`        | Random piece of advice                    |
-|               | `/toc-quote`         | Inspirational quote                       |
-|               | `/toc-define`        | Dictionary definition                     |
-|               | `/toc-number`        | Number fact                               |
-|               | `/toc-trivia`        | Trivia question                           |
-| **Media**     | `/toc-cat`           | Random cat fact                           |
-|               | `/toc-dog`           | Random dog image                          |
-|               | `/toc-weather`       | Weather for a city                        |
-|               | `/toc-crypto`        | Cryptocurrency price & change             |
+| Category      | Commands                                                                                                     |
+| ------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Utility**   | `/toc-ping`, `/toc-help`, `/toc-echo`, `/toc-time`, `/toc-uptime`                                            |
+| **Fun**       | `/toc-joke`, `/toc-roast`, `/toc-insult`, `/toc-8ball`, `/toc-wyr`, `/toc-yesno`, `/toc-bored`, `/toc-kanye` |
+| **Knowledge** | `/toc-fact`, `/toc-advice`, `/toc-quote`, `/toc-define`, `/toc-number`, `/toc-trivia`                        |
+| **Media**     | `/toc-cat`, `/toc-dog`, `/toc-weather`, `/toc-crypto`                                                        |
+
+---
 
 ## Tech Stack
 
-| Layer           | Technology                                                    |
-| --------------- | ------------------------------------------------------------- |
-| Runtime         | [Bun](https://bun.sh) 1.3+                                    |
-| Language        | [TypeScript](https://www.typescriptlang.org) 5+ (strict mode) |
-| Slack SDK       | [Bolt](https://slack.dev/bolt-js) (via `@slack/bolt`)         |
-| HTTP client     | [Axios](https://axios-http.com)                               |
-| Linter          | [ESLint](https://eslint.org) + `typescript-eslint`            |
-| Formatter       | [Prettier](https://prettier.io)                               |
-| Git hooks       | [Husky](https://typicode.github.io/husky) + `lint-staged`     |
-| Package manager | `bun` (built-in)                                              |
+- Bun
+- TypeScript (strict mode)
+- Slack Bolt
+- Axios
+- ESLint
+- Prettier
+- Husky
+- lint-staged
 
-## Quick Start
+Nothing too fancy—just tools that make development smoother.
 
-### Prerequisites
+---
 
-- [Bun](https://bun.sh) 1.3 or later
-- A Slack workspace with [Slash Command](https://api.slack.com/interactivity/slash-commands) and [Socket Mode](https://api.slack.com/apis/connections/socket) enabled
+## Getting started
 
-### Installation
+Clone the repository:
 
 ```bash
 git clone https://github.com/TADSTech/SlackBot.git
@@ -77,98 +78,88 @@ cd SlackBot
 bun install
 ```
 
-### Configuration
+Create a Slack app, enable **Socket Mode**, then add the required scopes:
 
-1. Create a Slack app at [api.slack.com/apps](https://api.slack.com/apps)
-2. Enable **Socket Mode** in your app settings
-3. Add the required **Bot Token Scopes**: `chat:write`, `commands`
-4. Install the app to your workspace
-5. Copy the environment file and fill in your tokens:
+- `chat:write`
+- `commands`
+
+Copy the environment template:
 
 ```bash
 cp .env.example .env
 ```
 
-**.env** contents:
+Fill it in:
 
+```env
+SLACK_BOT_TOKEN=xoxb-your-token
+SLACK_APP_TOKEN=xapp-your-token
 ```
-SLACK_BOT_TOKEN=xoxb-your-bot-token
-SLACK_APP_TOKEN=xapp-your-app-level-token
-```
 
-6. Create each [Slash Command](https://api.slack.com/interactivity/slash-commands) in your app settings — use the command names listed above. The Request URL can be left blank when using Socket Mode.
+Then create the slash commands in your Slack app using the names listed above.
 
-### Running
+Since this uses Socket Mode, you don't need a Request URL.
+
+Run the bot:
 
 ```bash
 bun run index.ts
 ```
 
-The bot will connect via Socket Mode and start responding to commands immediately.
+That's it.
 
-## Project Structure
+---
 
-```
+## Project structure
+
+```text
 SlackBot/
-├── index.ts              # Entry point — all command handlers
-├── tsconfig.json         # Strict TypeScript configuration
-├── eslint.config.js      # ESLint flat config
-├── .prettierrc           # Prettier formatting rules
+├── index.ts
+├── frontend/
 ├── .husky/
-│   ├── pre-commit        # Runs lint-staged on staged files
-│   └── pre-push          # Runs typecheck + lint + format check
-├── commands.txt          # Reference for Slack API command registration
-├── generate_banner.py    # Banner image generator (optional)
-├── frontend/             # GitHub Pages showcase site
-│   ├── index.html
-│   ├── style.css
-│   ├── script.js
-│   └── slackbot-banner.png
+├── commands.txt
+├── tsconfig.json
+├── eslint.config.js
+├── .prettierrc
 └── package.json
 ```
 
-## Scripts
+The project intentionally stays pretty small. Most of the logic lives in `index.ts`, making it easy to add new commands without digging through a huge folder structure.
 
-| Command                | Action                                         |
-| ---------------------- | ---------------------------------------------- |
-| `bun run index.ts`     | Start the bot                                  |
-| `bun run lint`         | Check for lint errors                          |
-| `bun run lint:fix`     | Auto-fix lint errors                           |
-| `bun run format`       | Auto-format all files with Prettier            |
-| `bun run format:check` | Check formatting without writing               |
-| `bun run typecheck`    | Run `tsc --noEmit` for type errors             |
-| `bun run check`        | Run all three: typecheck + lint + format:check |
+---
 
-## Development
+## Useful scripts
 
 ```bash
-# Type-check continuously
-bun run typecheck
-
-# Lint + format before pushing
-bun run check
+bun run index.ts       # Start the bot
+bun run lint           # Lint
+bun run lint:fix       # Auto-fix lint issues
+bun run format         # Format everything
+bun run format:check   # Check formatting
+bun run typecheck      # TypeScript checks
+bun run check          # Run all checks
 ```
 
-The pre-push hook runs `bun run check` automatically — pushes that fail linting or type-checking are rejected.
+A Husky pre-push hook runs `bun run check`, so I don't accidentally push broken code.
+
+---
 
 ## Deployment
 
-The bot runs wherever Bun is available:
+If Bun runs there, the bot runs there.
+
+For development I usually just start it locally:
 
 ```bash
-# Local development
 bun run index.ts
-
-# Persistent server (example using PM2 or systemd)
-# or deploy to any VPS / cloud VM with Bun installed
 ```
 
-For the frontend showcase site, push the `frontend/` directory to GitHub Pages:
+For something long-running, you can throw it on a VPS with PM2, systemd, Docker, or whatever you normally use.
 
-1. Go to your repo **Settings > Pages**
-2. Set source to **GitHub Actions** or **Deploy from a branch > main > /frontend**
-3. The site will be available at `https://tadstech.github.io/SlackBot`
+The frontend demo is hosted with GitHub Pages.
+
+---
 
 ## License
 
-MIT — see [LICENSE](LICENSE) for details.
+MIT.
