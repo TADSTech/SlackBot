@@ -1,7 +1,5 @@
 === SLASH COMMANDS — Slack API Settings ===
 
-Paste these into: Slack API > Your App > Slash Commands > Create New Command
-
 ── UTILITY ──
 
 1. /toc-ping
@@ -103,7 +101,3 @@ Paste these into: Slack API > Your App > Slash Commands > Create New Command
     Usage Hint: [crypto name, default: bitcoin]
 
 Total: 23 slash commands across 4 categories.
-
-=== REQUEST URL ===
-If using HTTP mode (not Socket Mode), use:
-https://your-domain.com/slack/events

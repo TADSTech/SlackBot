@@ -162,8 +162,8 @@ app.command("/tadsocommand-joke", async ({ ack, respond }) => {
 app.command("/toc-fact", async ({ ack, respond }) => {
   await ack();
   try {
-    const data = await apiGet("https://uselessfacts.jsph.ru/api/v2/facts/random?language=en");
-    await respond({ text: `💡 *Did you know?*\n${data.text}` });
+    const data = await apiGet("https://api.popcat.xyz/fact");
+    await respond({ text: `💡 *Did you know?*\n${data.fact}` });
   } catch {
     await respond({ text: "Fact pipeline ran dry. Try again later." });
   }
@@ -224,14 +224,13 @@ app.command("/toc-define", async ({ ack, respond, command }) => {
 });
 
 // ─── Number Fact ───
-app.command("/toc-number", async ({ ack, respond, command }) => {
+app.command("/toc-number", async ({ ack, respond }) => {
   await ack();
-  const num = command.text?.trim() || "random";
   try {
-    const data = await apiGet(`http://numbersapi.com/${encodeURIComponent(num)}?json`);
-    await respond({ text: `🔢 *Number Fact:* ${data.text}` });
+    const data = await apiGet("https://api.popcat.xyz/fact");
+    await respond({ text: `🔢 *Fact:* ${data.fact}` });
   } catch {
-    await respond({ text: `Couldn't get a fact about "${num}". Try a different number.` });
+    await respond({ text: "Couldn't get a fact. Try again later." });
   }
 });
 
@@ -284,19 +283,14 @@ app.command("/toc-dog", async ({ ack, respond }) => {
 // ─── Roast ───
 app.command("/toc-roast", async ({ ack, respond }) => {
   await ack();
-  try {
-    const data = await apiGet("https://evilinsult.com/generate_insult.php?lang=en&type=json");
-    await respond({ text: `🔥 *Roast:* ${data.insult}` });
-  } catch {
-    const roasts = [
-      "You're not stupid; you just have bad luck thinking.",
-      "I'd agree with you, but then we'd both be wrong.",
-      "You bring everyone so much joy — when you leave.",
-      "Somewhere a village is missing its idiot.",
-      "Your secrets are safe with me. I never listen anyway.",
-    ];
-    await respond({ text: `🔥 *Roast:* ${roasts[Math.floor(Math.random() * roasts.length)]}` });
-  }
+  const roasts = [
+    "You're not stupid; you just have bad luck thinking.",
+    "I'd agree with you, but then we'd both be wrong.",
+    "You bring everyone so much joy — when you leave.",
+    "Somewhere a village is missing its idiot.",
+    "Your secrets are safe with me. I never listen anyway.",
+  ];
+  await respond({ text: `🔥 *Roast:* ${roasts[Math.floor(Math.random() * roasts.length)]}` });
 });
 
 // ─── Insult ───
@@ -353,8 +347,8 @@ app.command("/toc-8ball", async ({ ack, respond, command }) => {
 app.command("/toc-wyr", async ({ ack, respond }) => {
   await ack();
   try {
-    const data = await apiGet("https://would-you-rather-api.abaanshanid.repl.co/");
-    await respond({ text: `🤔 *Would You Rather...*\n\n${data.data[0].question}` });
+    const data = await apiGet("https://api.truthordarebot.xyz/api/wyr");
+    await respond({ text: `🤔 *Would You Rather...*\n\n${data.question}` });
   } catch {
     const wyr = [
       "Have the ability to fly or be invisible?",
