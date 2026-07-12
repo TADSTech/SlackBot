@@ -3,27 +3,122 @@
 
 // ─── Command Data ───
 const COMMANDS = [
-  { name: "/toc-ping", desc: "Check bot latency with a ping/pong response.", cat: "Utility", catLabel: "Utility" },
-  { name: "/toc-help", desc: "List all available commands in a categorized view.", cat: "Utility", catLabel: "Utility" },
-  { name: "/toc-echo", desc: "Echo your message back with a random response variant.", cat: "Utility", catLabel: "Utility" },
-  { name: "/toc-time", desc: "Display the current server date and time.", cat: "Utility", catLabel: "Utility" },
-  { name: "/toc-uptime", desc: "Show how long the bot has been running.", cat: "Utility", catLabel: "Utility" },
-  { name: "/toc-weather", desc: "Check current weather for any city.", cat: "Media", catLabel: "Media" },
-  { name: "/toc-crypto", desc: "Get the latest crypto price & 24h change.", cat: "Media", catLabel: "Media" },
-  { name: "/tadsocommand-joke", desc: "Get a random joke with setup and punchline.", cat: "Fun", catLabel: "Fun" },
-  { name: "/toc-roast", desc: "Get roasted by the bot. Bring thick skin.", cat: "Fun", catLabel: "Fun" },
-  { name: "/toc-insult", desc: "A playful insult to keep you humble.", cat: "Fun", catLabel: "Fun" },
-  { name: "/toc-8ball", desc: "Ask the magic 8-ball a yes/no question.", cat: "Fun", catLabel: "Fun" },
+  {
+    name: "/toc-ping",
+    desc: "Check bot latency with a ping/pong response.",
+    cat: "Utility",
+    catLabel: "Utility",
+  },
+  {
+    name: "/toc-help",
+    desc: "List all available commands in a categorized view.",
+    cat: "Utility",
+    catLabel: "Utility",
+  },
+  {
+    name: "/toc-echo",
+    desc: "Echo your message back with a random response variant.",
+    cat: "Utility",
+    catLabel: "Utility",
+  },
+  {
+    name: "/toc-time",
+    desc: "Display the current server date and time.",
+    cat: "Utility",
+    catLabel: "Utility",
+  },
+  {
+    name: "/toc-uptime",
+    desc: "Show how long the bot has been running.",
+    cat: "Utility",
+    catLabel: "Utility",
+  },
+  {
+    name: "/toc-weather",
+    desc: "Check current weather for any city.",
+    cat: "Media",
+    catLabel: "Media",
+  },
+  {
+    name: "/toc-crypto",
+    desc: "Get the latest crypto price & 24h change.",
+    cat: "Media",
+    catLabel: "Media",
+  },
+  {
+    name: "/tadsocommand-joke",
+    desc: "Get a random joke with setup and punchline.",
+    cat: "Fun",
+    catLabel: "Fun",
+  },
+  {
+    name: "/toc-roast",
+    desc: "Get roasted by the bot. Bring thick skin.",
+    cat: "Fun",
+    catLabel: "Fun",
+  },
+  {
+    name: "/toc-insult",
+    desc: "A playful insult to keep you humble.",
+    cat: "Fun",
+    catLabel: "Fun",
+  },
+  {
+    name: "/toc-8ball",
+    desc: "Ask the magic 8-ball a yes/no question.",
+    cat: "Fun",
+    catLabel: "Fun",
+  },
   { name: "/toc-wyr", desc: "Get a Would You Rather question.", cat: "Fun", catLabel: "Fun" },
-  { name: "/toc-yesno", desc: "Get a definitive yes/no/maybe answer.", cat: "Fun", catLabel: "Fun" },
-  { name: "/toc-bored", desc: "Get an activity suggestion when you're bored.", cat: "Fun", catLabel: "Fun" },
+  {
+    name: "/toc-yesno",
+    desc: "Get a definitive yes/no/maybe answer.",
+    cat: "Fun",
+    catLabel: "Fun",
+  },
+  {
+    name: "/toc-bored",
+    desc: "Get an activity suggestion when you're bored.",
+    cat: "Fun",
+    catLabel: "Fun",
+  },
   { name: "/toc-kanye", desc: "Get a Kanye West quote.", cat: "Fun", catLabel: "Fun" },
-  { name: "/toc-fact", desc: "Get a random useless fact.", cat: "Knowledge", catLabel: "Knowledge" },
-  { name: "/toc-advice", desc: "Get a random piece of advice.", cat: "Knowledge", catLabel: "Knowledge" },
-  { name: "/toc-quote", desc: "Get an inspirational quote.", cat: "Knowledge", catLabel: "Knowledge" },
-  { name: "/toc-define", desc: "Look up the definition of any word.", cat: "Knowledge", catLabel: "Knowledge" },
-  { name: "/toc-number", desc: "Get a random or specific number fact.", cat: "Knowledge", catLabel: "Knowledge" },
-  { name: "/toc-trivia", desc: "Get a random trivia question.", cat: "Knowledge", catLabel: "Knowledge" },
+  {
+    name: "/toc-fact",
+    desc: "Get a random useless fact.",
+    cat: "Knowledge",
+    catLabel: "Knowledge",
+  },
+  {
+    name: "/toc-advice",
+    desc: "Get a random piece of advice.",
+    cat: "Knowledge",
+    catLabel: "Knowledge",
+  },
+  {
+    name: "/toc-quote",
+    desc: "Get an inspirational quote.",
+    cat: "Knowledge",
+    catLabel: "Knowledge",
+  },
+  {
+    name: "/toc-define",
+    desc: "Look up the definition of any word.",
+    cat: "Knowledge",
+    catLabel: "Knowledge",
+  },
+  {
+    name: "/toc-number",
+    desc: "Get a random or specific number fact.",
+    cat: "Knowledge",
+    catLabel: "Knowledge",
+  },
+  {
+    name: "/toc-trivia",
+    desc: "Get a random trivia question.",
+    cat: "Knowledge",
+    catLabel: "Knowledge",
+  },
   { name: "/toc-cat", desc: "Get a random cat fact.", cat: "Media", catLabel: "Media" },
   { name: "/toc-dog", desc: "Get a random dog image.", cat: "Media", catLabel: "Media" },
 ];
@@ -54,14 +149,16 @@ function renderCommands(filter = "all", search = "") {
     return;
   }
 
-  container.innerHTML = filtered.map((cmd) => {
-    const catClass = CAT_CLASSES[cmd.cat] || "";
-    return `<div class="cmd-card">
+  container.innerHTML = filtered
+    .map((cmd) => {
+      const catClass = CAT_CLASSES[cmd.cat] || "";
+      return `<div class="cmd-card">
       <div class="cmd-category ${catClass}">${cmd.cat}</div>
       <div class="cmd-name">${cmd.name}</div>
       <div class="cmd-desc">${cmd.desc}</div>
     </div>`;
-  }).join("");
+    })
+    .join("");
 }
 
 // ─── Search & Filter ───
@@ -87,7 +184,9 @@ function initParticles() {
   const canvas = document.getElementById("particles");
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
-  let w, h, particles = [];
+  let w,
+    h,
+    particles = [];
 
   function resize() {
     w = canvas.width = window.innerWidth;
@@ -152,7 +251,8 @@ const DEMO_RESPONSES = {
   uptime: "⏱ Been running for 2d 14h 23m 7s",
   fact: "💡 Did you know?\nA group of flamingos is called a 'flamboyance'.",
   advice: "🧠 Advice:\nThe best time to start is now.",
-  quote: '"The only limit to our realization of tomorrow is our doubts of today." — Franklin D. Roosevelt',
+  quote:
+    '"The only limit to our realization of tomorrow is our doubts of today." — Franklin D. Roosevelt',
   joke: "Why do programmers prefer dark mode?\n\nBecause light attracts bugs! 😄",
   roast: "🔥 Roast: You're not stupid; you just have bad luck thinking.",
   insult: "😤 I'd agree with you, but then we'd both be wrong.",
@@ -160,13 +260,16 @@ const DEMO_RESPONSES = {
   wyr: "🤔 Would You Rather...\n\nHave the ability to fly or be invisible?",
   yesno: "✅ *Should I do it?\nYES!",
   bored: "😐 Bored? Try this:\nLearn to juggle!",
-  kanye: '🌊 Kanye says: "I am Warhol! I am the number one most impactful artist of our generation."',
+  kanye:
+    '🌊 Kanye says: "I am Warhol! I am the number one most impactful artist of our generation."',
   weather: "🌤 Weather in London\n☁️ +15°C 10mph 75%",
   crypto: "📈 *Bitcoin*\nPrice: $62,431\n24h Change: +2.34%",
   cat: "🐱 Cat Fact: A cat's tail contains nearly 10% of all the bones in its body.",
   dog: "🐕 Random Doggo!\nhttps://images.dog.ceo/breeds/hound-walker/n02089867_1234.jpg",
-  trivia: "❓ Trivia: Science & Nature\n  What is the chemical symbol for gold?\n  \n  Au ✅\n  Ag\n  Fe\n  Cu\n  \n_Difficulty: easy_",
-  define: "📖 *Serendipity* (noun)\n> The occurrence of events by chance in a happy or beneficial way.\n_Example: Finding that book was pure serendipity._",
+  trivia:
+    "❓ Trivia: Science & Nature\n  What is the chemical symbol for gold?\n  \n  Au ✅\n  Ag\n  Fe\n  Cu\n  \n_Difficulty: easy_",
+  define:
+    "📖 *Serendipity* (noun)\n> The occurrence of events by chance in a happy or beneficial way.\n_Example: Finding that book was pure serendipity._",
   number: "🔢 Number Fact: 42 is the number of laws of robotics according to Isaac Asimov's books.",
 };
 
@@ -201,14 +304,17 @@ function simulateResponse(cmd) {
   terminalBody?.appendChild(typingDiv);
   terminalBody?.scrollTo(0, terminalBody.scrollHeight);
 
-  setTimeout(() => {
-    typingDiv.remove();
-    addTerminalLine(response);
+  setTimeout(
+    () => {
+      typingDiv.remove();
+      addTerminalLine(response);
 
-    setTimeout(() => {
-      addTerminalLine("Ready for commands. Type one below!", "response");
-    }, 500);
-  }, 600 + Math.random() * 400);
+      setTimeout(() => {
+        addTerminalLine("Ready for commands. Type one below!", "response");
+      }, 500);
+    },
+    600 + Math.random() * 400,
+  );
 }
 
 function handleDemoCommand() {
@@ -243,23 +349,26 @@ document.querySelectorAll(".copy-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     const text = btn.dataset.cmd;
     if (!text) return;
-    navigator.clipboard.writeText(text).then(() => {
-      btn.classList.add("copied");
-      const orig = btn.innerHTML;
-      btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>`;
-      setTimeout(() => {
-        btn.classList.remove("copied");
-        btn.innerHTML = orig;
-      }, 2000);
-    }).catch(() => {
-      // Fallback
-      const ta = document.createElement("textarea");
-      ta.value = text;
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand("copy");
-      ta.remove();
-    });
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        btn.classList.add("copied");
+        const orig = btn.innerHTML;
+        btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>`;
+        setTimeout(() => {
+          btn.classList.remove("copied");
+          btn.innerHTML = orig;
+        }, 2000);
+      })
+      .catch(() => {
+        // Fallback
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        ta.remove();
+      });
   });
 });
 
@@ -272,7 +381,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.1 }
+  { threshold: 0.1 },
 );
 
 document.querySelectorAll(".section").forEach((section) => {

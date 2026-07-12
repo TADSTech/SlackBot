@@ -3,21 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="TOC SlackBot — your command center, right in Slack. A feature-packed Slack bot with 20+ slash commands built with Bun, TypeScript, and Bolt." />
+    <meta
+      name="description"
+      content="TOC SlackBot — your command center, right in Slack. A feature-packed Slack bot with 20+ slash commands built with Bun, TypeScript, and Bolt."
+    />
 
     <meta property="og:title" content="TOC SlackBot" />
-    <meta property="og:description" content="20+ slash commands. Socket Mode. Bun + TypeScript + Bolt." />
+    <meta
+      property="og:description"
+      content="20+ slash commands. Socket Mode. Bun + TypeScript + Bolt."
+    />
     <meta property="og:image" content="assets/slackbot-banner.png" />
     <meta property="og:url" content="https://tadstech.github.io/SlackBot" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="TOC SlackBot" />
-    <meta name="twitter:description" content="20+ slash commands. Socket Mode. Bun + TypeScript + Bolt." />
+    <meta
+      name="twitter:description"
+      content="20+ slash commands. Socket Mode. Bun + TypeScript + Bolt."
+    />
     <meta name="twitter:image" content="assets/slackbot-banner.png" />
 
     <title>TOC SlackBot — Command Center</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E%23%3C/text%3E%3C/svg%3E" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E%23%3C/text%3E%3C/svg%3E"
+    />
   </head>
   <body>
     <canvas id="particles"></canvas>
@@ -47,7 +59,11 @@
           </div>
           <div class="hero-actions">
             <a href="https://github.com/TADSTech/SlackBot" class="btn btn-primary" target="_blank">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                />
+              </svg>
               GitHub
             </a>
             <a href="#commands" class="btn btn-secondary">Explore Commands</a>
@@ -89,8 +105,24 @@
 
           <div class="cmd-toolbar">
             <div class="search-wrap">
-              <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-              <input type="text" id="cmdSearch" placeholder="Search commands..." class="search-input" />
+              <svg
+                class="search-icon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+              </svg>
+              <input
+                type="text"
+                id="cmdSearch"
+                placeholder="Search commands..."
+                class="search-input"
+              />
             </div>
             <div class="filter-badges" id="filterBadges">
               <button class="filter-btn active" data-filter="all">All</button>
@@ -108,7 +140,9 @@
       <section id="demo" class="section">
         <div class="container">
           <h2 class="section-title">Live Demo</h2>
-          <p class="section-desc">Try the commands right here. Responses are simulated for the showcase.</p>
+          <p class="section-desc">
+            Try the commands right here. Responses are simulated for the showcase.
+          </p>
 
           <div class="demo-layout">
             <div class="demo-terminal">
@@ -156,10 +190,26 @@
       <section id="quickstart" class="section alt">
         <div class="container">
           <h2 class="section-title">Quick Start</h2>
-          <p class="section-desc">Get the bot running in your own Slack workspace in under 5 minutes.</p>
+          <p class="section-desc">
+            Get the bot running in your own Slack workspace in under 5 minutes.
+          </p>
           <div class="code-block-wrapper">
-            <button class="copy-btn" data-cmd="git clone https://github.com/TADSTech/SlackBot.git && cd SlackBot && bun install && cp .env.example .env && bun run index.ts" title="Copy all commands">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            <button
+              class="copy-btn"
+              data-cmd="git clone https://github.com/TADSTech/SlackBot.git && cd SlackBot && bun install && cp .env.example .env && bun run index.ts"
+              title="Copy all commands"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="9" y="9" width="13" height="13" rx="2" />
+                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+              </svg>
             </button>
             <pre><code><span class="hl-comment"># Clone & install</span>
 git clone https://github.com/TADSTech/SlackBot.git
@@ -183,32 +233,49 @@ bun run index.ts</code></pre>
             <div class="tech-card">
               <div class="tech-icon">⚡</div>
               <h3>Runtime</h3>
-              <p>Runs on <strong>Bun</strong> — a fast all-in-one JavaScript runtime. No Node.js required for development.</p>
+              <p>
+                Runs on <strong>Bun</strong> — a fast all-in-one JavaScript runtime. No Node.js
+                required for development.
+              </p>
             </div>
             <div class="tech-card">
               <div class="tech-icon">🔌</div>
               <h3>Slack Integration</h3>
-              <p>Uses <strong>Socket Mode</strong> so no public endpoint is needed. Perfect for local or ephemeral deployments.</p>
+              <p>
+                Uses <strong>Socket Mode</strong> so no public endpoint is needed. Perfect for local
+                or ephemeral deployments.
+              </p>
             </div>
             <div class="tech-card">
               <div class="tech-icon">🛡️</div>
               <h3>Type Safety</h3>
-              <p>Written in strict TypeScript with full type checking via <code>tsc --noEmit</code>.</p>
+              <p>
+                Written in strict TypeScript with full type checking via <code>tsc --noEmit</code>.
+              </p>
             </div>
             <div class="tech-card">
               <div class="tech-icon">🧹</div>
               <h3>Code Quality</h3>
-              <p>ESLint + Prettier enforce consistent style. Husky pre-push hooks prevent bad commits.</p>
+              <p>
+                ESLint + Prettier enforce consistent style. Husky pre-push hooks prevent bad
+                commits.
+              </p>
             </div>
             <div class="tech-card">
               <div class="tech-icon">🌐</div>
               <h3>External APIs</h3>
-              <p>Integrates with 7+ free APIs — jokes, facts, quotes, weather, crypto, dogs, cats, and more.</p>
+              <p>
+                Integrates with 7+ free APIs — jokes, facts, quotes, weather, crypto, dogs, cats,
+                and more.
+              </p>
             </div>
             <div class="tech-card">
               <div class="tech-icon">🎯</div>
               <h3>22 Slash Commands</h3>
-              <p>Four categories: Utility, Fun, Knowledge, and Media. Dynamic responses keep every interaction fresh.</p>
+              <p>
+                Four categories: Utility, Fun, Knowledge, and Media. Dynamic responses keep every
+                interaction fresh.
+              </p>
             </div>
           </div>
         </div>
@@ -265,7 +332,9 @@ bun run index.ts</code></pre>
 
     <footer class="footer">
       <div class="container">
-        <p>&copy; 2026 <a href="https://github.com/TADSTech">TADSTech</a>. Built with Bun &amp; Bolt.</p>
+        <p>
+          &copy; 2026 <a href="https://github.com/TADSTech">TADSTech</a>. Built with Bun &amp; Bolt.
+        </p>
         <p class="footer-links">
           <a href="https://github.com/TADSTech/SlackBot">GitHub</a>
           <span class="stat-divider">·</span>
