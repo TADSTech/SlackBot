@@ -2,16 +2,18 @@
 
 Paste these into: Slack API > Your App > Slash Commands > Create New Command
 
+── UTILITY ──
+
 1. /toc-ping
-   Description: Check bot latency with a ping/pong response
+   Description: Check bot latency with a ping/pong response (random variants)
    Usage Hint: [no arguments]
 
 2. /toc-help
-   Description: Show all available commands
+   Description: Show all available commands in a categorized view
    Usage Hint: [no arguments]
 
 3. /toc-echo
-   Description: Echo your message back to you
+   Description: Echo your message back (random response variants)
    Usage Hint: [your text here]
 
 4. /toc-time
@@ -22,17 +24,85 @@ Paste these into: Slack API > Your App > Slash Commands > Create New Command
    Description: Show how long the bot has been running
    Usage Hint: [no arguments]
 
+── FUN ──
+
 6. /tadsocommand-joke
    Description: Get a random joke (setup + punchline)
    Usage Hint: [no arguments]
 
-7. /toc-fact
-   Description: Get a random useless fact
+7. /toc-roast
+   Description: Get roasted by the bot
    Usage Hint: [no arguments]
 
-8. /toc-advice
-   Description: Get a random piece of advice
+8. /toc-insult
+   Description: Get a playful insult
    Usage Hint: [no arguments]
+
+9. /toc-8ball
+   Description: Ask the magic 8-ball a question
+   Usage Hint: [your question here]
+
+10. /toc-wyr
+    Description: Get a Would You Rather question
+    Usage Hint: [no arguments]
+
+11. /toc-yesno
+    Description: Get a yes/no/maybe answer
+    Usage Hint: [your question here, optional]
+
+12. /toc-bored
+    Description: Get an activity suggestion
+    Usage Hint: [no arguments]
+
+13. /toc-kanye
+    Description: Get a Kanye West quote
+    Usage Hint: [no arguments]
+
+── KNOWLEDGE ──
+
+14. /toc-fact
+    Description: Get a random useless fact
+    Usage Hint: [no arguments]
+
+15. /toc-advice
+    Description: Get a random piece of advice
+    Usage Hint: [no arguments]
+
+16. /toc-quote
+    Description: Get an inspirational quote
+    Usage Hint: [no arguments]
+
+17. /toc-define
+    Description: Look up the definition of any word
+    Usage Hint: [word to define]
+
+18. /toc-number
+    Description: Get a random or specific number fact
+    Usage Hint: [number, optional]
+
+19. /toc-trivia
+    Description: Get a random trivia question
+    Usage Hint: [no arguments]
+
+── MEDIA ──
+
+20. /toc-cat
+    Description: Get a random cat fact
+    Usage Hint: [no arguments]
+
+21. /toc-dog
+    Description: Get a random dog image
+    Usage Hint: [no arguments]
+
+22. /toc-weather
+    Description: Check weather for a city
+    Usage Hint: [city name]
+
+23. /toc-crypto
+    Description: Get cryptocurrency price & 24h change
+    Usage Hint: [crypto name, default: bitcoin]
+
+Total: 23 slash commands across 4 categories.
 
 === REQUEST URL ===
 If using HTTP mode (not Socket Mode), use:

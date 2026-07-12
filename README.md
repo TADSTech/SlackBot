@@ -14,24 +14,40 @@ A lightweight, extensible Slack bot that runs via **Socket Mode** — no public 
 
 ## Features
 
-- **8 slash commands** — ping, help, echo, time, uptime, jokes, facts, advice
+- **23 slash commands** across 4 categories — Utility, Fun, Knowledge, Media
 - **Socket Mode** — no public URL required; ideal for local or ephemeral deployments
-- **External API integration** — pulls from the Official Joke API, uselessfacts.jsph.ru, and Advice Slip API
+- **External API integration** — pulls from 10+ free APIs (jokes, facts, quotes, weather, crypto, dogs, cats, trivia, dictionary, and more)
+- **Dynamic responses** — random response variants keep every interaction fresh
 - **Type safety** — strict TypeScript configuration, fully type-checked
 - **Code quality** — ESLint + Prettier, enforced via Husky pre-push hooks
 
 ## Commands
 
-| Command              | Description                                 |
-| -------------------- | ------------------------------------------- |
-| `/toc-ping`          | Check bot latency with a ping/pong response |
-| `/toc-help`          | List all available commands                 |
-| `/toc-echo <text>`   | Echo your message back                      |
-| `/toc-time`          | Show current server date and time           |
-| `/toc-uptime`        | Show how long the bot has been running      |
-| `/tadsocommand-joke` | Get a random joke (setup + punchline)       |
-| `/toc-fact`          | Get a random useless fact                   |
-| `/toc-advice`        | Get a random piece of advice                |
+| Category      | Command              | Description                               |
+| ------------- | -------------------- | ----------------------------------------- |
+| **Utility**   | `/toc-ping`          | Check bot latency (random variants)       |
+|               | `/toc-help`          | Categorized help menu                     |
+|               | `/toc-echo <text>`   | Echo your message back (varied responses) |
+|               | `/toc-time`          | Show current server date and time         |
+|               | `/toc-uptime`        | Show how long the bot has been running    |
+| **Fun**       | `/tadsocommand-joke` | Get a random joke                         |
+|               | `/toc-roast`         | Get roasted by the bot                    |
+|               | `/toc-insult`        | Get a playful insult                      |
+|               | `/toc-8ball`         | Ask the magic 8-ball                      |
+|               | `/toc-wyr`           | Would You Rather question                 |
+|               | `/toc-yesno`         | Yes/no/maybe answer                       |
+|               | `/toc-bored`         | Activity suggestion                       |
+|               | `/toc-kanye`         | Kanye West quote                          |
+| **Knowledge** | `/toc-fact`          | Random useless fact                       |
+|               | `/toc-advice`        | Random piece of advice                    |
+|               | `/toc-quote`         | Inspirational quote                       |
+|               | `/toc-define`        | Dictionary definition                     |
+|               | `/toc-number`        | Number fact                               |
+|               | `/toc-trivia`        | Trivia question                           |
+| **Media**     | `/toc-cat`           | Random cat fact                           |
+|               | `/toc-dog`           | Random dog image                          |
+|               | `/toc-weather`       | Weather for a city                        |
+|               | `/toc-crypto`        | Cryptocurrency price & change             |
 
 ## Tech Stack
 
