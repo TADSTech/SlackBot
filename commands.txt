@@ -1,0 +1,39 @@
+=== SLASH COMMANDS — Slack API Settings ===
+
+Paste these into: Slack API > Your App > Slash Commands > Create New Command
+
+1. /toc-ping
+   Description: Check bot latency with a ping/pong response
+   Usage Hint: [no arguments]
+
+2. /toc-help
+   Description: Show all available commands
+   Usage Hint: [no arguments]
+
+3. /toc-echo
+   Description: Echo your message back to you
+   Usage Hint: [your text here]
+
+4. /toc-time
+   Description: Show the current server date and time
+   Usage Hint: [no arguments]
+
+5. /toc-uptime
+   Description: Show how long the bot has been running
+   Usage Hint: [no arguments]
+
+6. /tadsocommand-joke
+   Description: Get a random joke (setup + punchline)
+   Usage Hint: [no arguments]
+
+7. /toc-fact
+   Description: Get a random useless fact
+   Usage Hint: [no arguments]
+
+8. /toc-advice
+   Description: Get a random piece of advice
+   Usage Hint: [no arguments]
+
+=== REQUEST URL ===
+If using HTTP mode (not Socket Mode), use:
+https://your-domain.com/slack/events

@@ -1,0 +1,12 @@
+Add-Type -AssemblyName Microsoft.VisualBasic
+
+$text = [Microsoft.VisualBasic.Interaction]::InputBox(
+    "Enter text to type:",
+    "Macro",
+    ""
+)
+
+if ($text -ne "") {
+    $path = "$env:APPDATA\macro.txt"
+    Set-Content -Path $path -Value $text -Encoding UTF8
+}
