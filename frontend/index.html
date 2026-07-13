@@ -45,15 +45,15 @@
           </div>
         </div>
         <div class="hero-text">
-          <div class="hero-badge">v2.0 — Now with Personality!</div>
+          <div class="hero-badge">v2.0 — 28 Slash Commands</div>
           <h1>TOC SlackBot</h1>
-          <p class="tagline">A Slack bot with a quirky coworker vibe</p>
+          <p class="tagline">
+            A feature-packed, extensible Slack bot built with Bun, TypeScript, and Bolt.
+          </p>
           <div class="hero-stats">
             <span class="stat"><span class="stat-num" id="cmdCount">28</span> commands</span>
             <span class="stat-divider">·</span>
             <span class="stat"><span class="stat-num">5</span> categories</span>
-            <span class="stat-divider">·</span>
-            <span class="stat">Personality Mode</span>
             <span class="stat-divider">·</span>
             <span class="stat">Socket Mode</span>
           </div>
@@ -101,7 +101,9 @@
       <section id="commands" class="section alt">
         <div class="container">
           <h2 class="section-title">Commands</h2>
-          <p class="section-desc">All <span id="cmdCountBottom">28</span> slash commands, organized by category.</p>
+          <p class="section-desc">
+            All <span id="cmdCountBottom">28</span> slash commands, organized by category.
+          </p>
 
           <div class="cmd-toolbar">
             <div class="search-wrap">
@@ -125,13 +127,13 @@
               />
             </div>
             <div class="filter-badges" id="filterBadges">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="Utility">Utility</button>
-            <button class="filter-btn" data-filter="Fun">Fun</button>
-            <button class="filter-btn" data-filter="Knowledge">Knowledge</button>
-            <button class="filter-btn" data-filter="Media">Media</button>
-            <button class="filter-btn" data-filter="Personality">Personality</button>
-          </div>
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="Utility">Utility</button>
+              <button class="filter-btn" data-filter="Fun">Fun</button>
+              <button class="filter-btn" data-filter="Knowledge">Knowledge</button>
+              <button class="filter-btn" data-filter="Media">Media</button>
+              <button class="filter-btn" data-filter="Personality">Personality</button>
+            </div>
           </div>
 
           <div class="commands-grid" id="command-list"></div>
@@ -176,13 +178,15 @@
                 <button id="demoSend" class="btn btn-primary demo-btn">Send</button>
               </div>
               <div class="demo-suggestions">
-            <button class="suggestion" data-cmd="toc-ping">/toc-ping</button>
-            <button class="suggestion" data-cmd="toc-fortune">/toc-fortune</button>
-            <button class="suggestion" data-cmd="toc-court should I refactor?">/toc-court</button>
-            <button class="suggestion" data-cmd="toc-joke">/toc-joke</button>
-            <button class="suggestion" data-cmd="toc-therapy npm broke">/toc-therapy</button>
-            <button class="suggestion" data-cmd="toc-corporate">/toc-corporate</button>
-          </div>
+                <button class="suggestion" data-cmd="toc-ping">/toc-ping</button>
+                <button class="suggestion" data-cmd="toc-fortune">/toc-fortune</button>
+                <button class="suggestion" data-cmd="toc-court should I refactor?">
+                  /toc-court
+                </button>
+                <button class="suggestion" data-cmd="toc-joke">/toc-joke</button>
+                <button class="suggestion" data-cmd="toc-therapy npm broke">/toc-therapy</button>
+                <button class="suggestion" data-cmd="toc-corporate">/toc-corporate</button>
+              </div>
             </div>
           </div>
         </div>
@@ -274,8 +278,8 @@ bun run index.ts</code></pre>
               <div class="tech-icon">🎯</div>
               <h3>28 Slash Commands</h3>
               <p>
-                Five categories: Utility, Fun, Knowledge, Media, and Personality. Dynamic responses keep every
-                interaction fresh.
+                Five categories: Utility, Fun, Knowledge, Media, and Personality. Dynamic responses
+                keep every interaction fresh.
               </p>
             </div>
           </div>

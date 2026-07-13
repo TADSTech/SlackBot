@@ -24,7 +24,7 @@
 
 ── FUN ──
 
-6. /tadsocommand-joke
+6. /toc-joke
    Description: Get a random joke (setup + punchline)
    Usage Hint: [no arguments]
 
@@ -100,4 +100,26 @@
     Description: Get cryptocurrency price & 24h change
     Usage Hint: [crypto name, default: bitcoin]
 
-Total: 23 slash commands across 4 categories.
+── PERSONALITY ──
+
+24. /toc-court
+    Description: Turn your question into a courtroom verdict
+    Usage Hint: [your question here]
+
+25. /toc-fortune
+    Description: Receive a suspiciously accurate fortune
+    Usage Hint: [no arguments]
+
+26. /toc-corporate
+    Description: Translate plain English into corporate jargon
+    Usage Hint: [no arguments]
+
+27. /toc-therapy
+    Description: Talk to a developer therapist
+    Usage Hint: [no arguments]
+
+28. /toc-plot
+    Description: Get a random plot twist
+    Usage Hint: [no arguments]
+
+Total: 28 slash commands across 5 categories.

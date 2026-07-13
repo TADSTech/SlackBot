@@ -311,10 +311,14 @@ const DEMO_RESPONSES = {
   define:
     "📖 *Serendipity* (noun)\n> The occurrence of events by chance in a happy or beneficial way.\n_Example: Finding that book was pure serendipity._",
   number: "🔢 Number Fact: 42 is the number of laws of robotics according to Isaac Asimov's books.",
-  court: "⚖️ Court of TOC (Presided over by: Judge Jenkins)\n\n*Case:* Should I skip class?\n\n*Verdict:* Absolutely not.\n\n*Sentence:* Attend class and complain about it later.\n\n*Appeal status:* Denied.",
-  fortune: "🥠 *Your fortune:* Your bug will disappear.\n\nUnfortunately it's because production crashed.",
-  corporate: "Following a comprehensive cross-functional review, we are proactively implementing enhance platform stability through targeted remediation.",
-  therapy: "🧘 *Therapist:*\n\nThat sounds really difficult.\n\nHave you tried deleting node_modules?\n\n...\n\nHow did that make you feel?",
+  court:
+    "⚖️ Court of TOC (Presided over by: Judge Jenkins)\n\n*Case:* Should I skip class?\n\n*Verdict:* Absolutely not.\n\n*Sentence:* Attend class and complain about it later.\n\n*Appeal status:* Denied.",
+  fortune:
+    "🥠 *Your fortune:* Your bug will disappear.\n\nUnfortunately it's because production crashed.",
+  corporate:
+    "Following a comprehensive cross-functional review, we are proactively implementing enhance platform stability through targeted remediation.",
+  therapy:
+    "🧘 *Therapist:*\n\nThat sounds really difficult.\n\nHave you tried deleting node_modules?\n\n...\n\nHow did that make you feel?",
   plot: "🎬 *Today's Plot Twist:\n\nThe intern has been secretly approving every pull request.\n\nNobody noticed.",
 };
 
