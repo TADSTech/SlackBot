@@ -16,7 +16,7 @@ I mainly built this as a fun project to explore Slack's API while keeping the co
 
 ## What it does
 
-Right now the bot comes with **28 slash commands** split into five groups:
+Right now the bot comes with **25 slash commands** split into five groups:
 
 - Utility
 - Fun
@@ -45,13 +45,13 @@ Since everything runs through **Socket Mode**, there's no Request URL to host or
 
 ## Commands
 
-| Category        | Commands                                                                                                     |
-| --------------- | ------------------------------------------------------------------------------------------------------------ |
-| **Utility**     | `/toc-ping`, `/toc-help`, `/toc-echo`, `/toc-time`, `/toc-uptime`                                            |
-| **Fun**         | `/toc-joke`, `/toc-roast`, `/toc-insult`, `/toc-8ball`, `/toc-wyr`, `/toc-yesno`, `/toc-bored`, `/toc-kanye` |
-| **Knowledge**   | `/toc-fact`, `/toc-advice`, `/toc-quote`, `/toc-define`, `/toc-number`, `/toc-trivia`                        |
-| **Media**       | `/toc-cat`, `/toc-dog`, `/toc-weather`, `/toc-crypto`                                                        |
-| **Personality** | `/toc-court`, `/toc-fortune`, `/toc-corporate`, `/toc-therapy`, `/toc-plot`                                  |
+| Category        | Commands                                                                        |
+| --------------- | ------------------------------------------------------------------------------- |
+| **Utility**     | `/toc-ping`, `/toc-help`, `/toc-echo`, `/toc-time`, `/toc-uptime`               |
+| **Fun**         | `/toc-joke`, `/toc-roast`, `/toc-8ball`, `/toc-wyr`, `/toc-bored`, `/toc-kanye` |
+| **Knowledge**   | `/toc-fact`, `/toc-quote`, `/toc-define`, `/toc-number`, `/toc-trivia`          |
+| **Media**       | `/toc-cat`, `/toc-dog`, `/toc-weather`, `/toc-crypto`                           |
+| **Personality** | `/toc-court`, `/toc-fortune`, `/toc-corporate`, `/toc-therapy`, `/toc-plot`     |
 
 ---
 

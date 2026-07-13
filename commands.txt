@@ -32,94 +32,82 @@
    Description: Get roasted by the bot
    Usage Hint: [no arguments]
 
-8. /toc-insult
-   Description: Get a playful insult
-   Usage Hint: [no arguments]
-
-9. /toc-8ball
+8. /toc-8ball
    Description: Ask the magic 8-ball a question
    Usage Hint: [your question here]
 
-10. /toc-wyr
-    Description: Get a Would You Rather question
-    Usage Hint: [no arguments]
+9. /toc-wyr
+   Description: Get a Would You Rather question
+   Usage Hint: [no arguments]
 
-11. /toc-yesno
-    Description: Get a yes/no/maybe answer
-    Usage Hint: [your question here, optional]
-
-12. /toc-bored
+10. /toc-bored
     Description: Get an activity suggestion
     Usage Hint: [no arguments]
 
-13. /toc-kanye
+11. /toc-kanye
     Description: Get a Kanye West quote
     Usage Hint: [no arguments]
 
 ── KNOWLEDGE ──
 
-14. /toc-fact
+12. /toc-fact
     Description: Get a random useless fact
     Usage Hint: [no arguments]
 
-15. /toc-advice
-    Description: Get a random piece of advice
-    Usage Hint: [no arguments]
-
-16. /toc-quote
+13. /toc-quote
     Description: Get an inspirational quote
     Usage Hint: [no arguments]
 
-17. /toc-define
+14. /toc-define
     Description: Look up the definition of any word
     Usage Hint: [word to define]
 
-18. /toc-number
+15. /toc-number
     Description: Get a random or specific number fact
     Usage Hint: [number, optional]
 
-19. /toc-trivia
+16. /toc-trivia
     Description: Get a random trivia question
     Usage Hint: [no arguments]
 
 ── MEDIA ──
 
-20. /toc-cat
+17. /toc-cat
     Description: Get a random cat fact
     Usage Hint: [no arguments]
 
-21. /toc-dog
+18. /toc-dog
     Description: Get a random dog image
     Usage Hint: [no arguments]
 
-22. /toc-weather
+19. /toc-weather
     Description: Check weather for a city
     Usage Hint: [city name]
 
-23. /toc-crypto
+20. /toc-crypto
     Description: Get cryptocurrency price & 24h change
     Usage Hint: [crypto name, default: bitcoin]
 
 ── PERSONALITY ──
 
-24. /toc-court
+21. /toc-court
     Description: Turn your question into a courtroom verdict
     Usage Hint: [your question here]
 
-25. /toc-fortune
+22. /toc-fortune
     Description: Receive a suspiciously accurate fortune
     Usage Hint: [no arguments]
 
-26. /toc-corporate
+23. /toc-corporate
     Description: Translate plain English into corporate jargon
     Usage Hint: [no arguments]
 
-27. /toc-therapy
+24. /toc-therapy
     Description: Talk to a developer therapist
     Usage Hint: [no arguments]
 
-28. /toc-plot
+25. /toc-plot
     Description: Get a random plot twist
     Usage Hint: [no arguments]
 
-Total: 28 slash commands across 5 categories.
+Total: 25 slash commands across 5 categories.

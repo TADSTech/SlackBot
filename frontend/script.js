@@ -58,24 +58,12 @@ const COMMANDS = [
     catLabel: "Fun",
   },
   {
-    name: "/toc-insult",
-    desc: "A playful insult to keep you humble.",
-    cat: "Fun",
-    catLabel: "Fun",
-  },
-  {
     name: "/toc-8ball",
     desc: "Ask the magic 8-ball a yes/no question.",
     cat: "Fun",
     catLabel: "Fun",
   },
   { name: "/toc-wyr", desc: "Get a Would You Rather question.", cat: "Fun", catLabel: "Fun" },
-  {
-    name: "/toc-yesno",
-    desc: "Get a definitive yes/no/maybe answer.",
-    cat: "Fun",
-    catLabel: "Fun",
-  },
   {
     name: "/toc-bored",
     desc: "Get an activity suggestion when you're bored.",
@@ -86,12 +74,6 @@ const COMMANDS = [
   {
     name: "/toc-fact",
     desc: "Get a random useless fact.",
-    cat: "Knowledge",
-    catLabel: "Knowledge",
-  },
-  {
-    name: "/toc-advice",
-    desc: "Get a random piece of advice.",
     cat: "Knowledge",
     catLabel: "Knowledge",
   },
@@ -290,15 +272,12 @@ const DEMO_RESPONSES = {
   time: "🕐 7/12/2026, 3:42:17 PM",
   uptime: "⏱ Been running for 2d 14h 23m 7s",
   fact: "💡 Did you know?\nA group of flamingos is called a 'flamboyance'.",
-  advice: "🧠 Advice:\nThe best time to start is now.",
   quote:
     '"The only limit to our realization of tomorrow is our doubts of today." — Franklin D. Roosevelt',
   joke: "Why do programmers prefer dark mode?\n\nBecause light attracts bugs! 😄",
   roast: "🔥 Roast: You're not stupid; you just have bad luck thinking.",
-  insult: "😤 I'd agree with you, but then we'd both be wrong.",
   "8ball": "🎱 Question: Will I win?\n\nMy sources say no.",
   wyr: "🤔 Would You Rather...\n\nHave the ability to fly or be invisible?",
-  yesno: "✅ *Should I do it?\nYES!",
   bored: "😐 Bored? Try this:\nLearn to juggle!",
   kanye:
     '🌊 Kanye says: "I am Warhol! I am the number one most impactful artist of our generation."',

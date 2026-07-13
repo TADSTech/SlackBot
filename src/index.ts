@@ -15,13 +15,10 @@ import "./commands/fun/joke";
 import "./commands/fun/roast";
 import "./commands/fun/8ball";
 import "./commands/fun/wyr";
-import "./commands/fun/yesno";
-import "./commands/fun/insult";
 import "./commands/fun/bored";
 import "./commands/fun/kanye";
 
 import "./commands/knowledge/fact";
-import "./commands/knowledge/advice";
 import "./commands/knowledge/quote";
 import "./commands/knowledge/define";
 import "./commands/knowledge/number";
